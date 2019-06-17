@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Pizzeria;
+use App\Entity\Pizza;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method Pizzeria|null find($id, $lockMode = null, $lockVersion = null)
- * @method Pizzeria|null findOneBy(array $criteria, array $orderBy = null)
- * @method Pizzeria[]    findAll()
- * @method Pizzeria[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Pizza|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Pizza|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Pizza[]    findAll()
+ * @method Pizza[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PizzeriaRepository extends ServiceEntityRepository
+class PizzaRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, Pizzeria::class);
+        parent::__construct($registry, Pizza::class);
     }
 
     // /**
-    //  * @return Pizzeria[] Returns an array of Pizzeria objects
+    //  * @return Pizza[] Returns an array of Pizza objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class PizzeriaRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Pizzeria
+    public function findOneBySomeField($value): ?Pizza
     {
         return $this->createQueryBuilder('p')
             ->andWhere('p.exampleField = :val')
