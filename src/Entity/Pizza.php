@@ -2,8 +2,6 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -34,15 +32,6 @@ class Pizza
      */
     private $category;
 
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Ingredients", inversedBy="pizzas")
-     */
-    private $ingredient;
-
-    public function __construct()
-    {
-        $this->ingredient = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -85,29 +74,4 @@ class Pizza
         return $this;
     }
 
-    /**
-     * @return Collection|Ingredients[]
-     */
-    public function getIngredient(): Collection
-    {
-        return $this->ingredient;
-    }
-
-    public function addIngredient(Ingredients $ingredient): self
-    {
-        if (!$this->ingredient->contains($ingredient)) {
-            $this->ingredient[] = $ingredient;
-        }
-
-        return $this;
-    }
-
-    public function removeIngredient(Ingredients $ingredient): self
-    {
-        if ($this->ingredient->contains($ingredient)) {
-            $this->ingredient->removeElement($ingredient);
-        }
-
-        return $this;
-    }
 }

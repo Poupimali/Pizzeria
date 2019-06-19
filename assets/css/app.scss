@@ -1,0 +1,13 @@
+@import "~bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&display=swap);
+
+$Quicksand: 'Quicksand', sans-serif;
+$primary-color: #DE6465;
+$secondary-color: #EDEBDC;
+$third-color: #F8F7F2;
+$fourth-color: #527760;
+$typo-color: #02111b;
+
+body {
+    background-color: $secondary-color;
+}

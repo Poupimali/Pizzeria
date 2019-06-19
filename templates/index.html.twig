@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1 class="text-center pt-3 pb-3">Bienvenue à la Pizzeria</h1>
+
+    <h2 class="text-center pt-3 pb-3">Les 5 pizzas les plus commandées</h2>
+    {% for pizza in pizzas %}
+        <div class="container mb-5">
+            {# {{ loop.index }} = l’index de l’itération courant#}
+            <h3>{{ loop.index }} / {{ pizza.name }}</h3>
+            <h4>Catégorie : {{ pizza.category.name }}</h4>
+            <h4>Taille : {{ pizza.size }}</h4>
+        </div>
+    {% else %}
+        Aucune pizza trouvée.
+    {% endfor %}
+
+{% endblock %}
